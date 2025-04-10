@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+	.neon-glow {
+		text-shadow: 0px 0px 8px rgba(0, 255, 255, 0.8);
+	}
+
+	.neon-border {
+		border: 2px solid rgba(0, 255, 255, 0.5);
+		box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.6);
+	}
+}

@@ -1,8 +1,5 @@
 <h1 align="center">E-Commerce Store 🛒</h1>
 
-![Demo App](/frontend/public/screenshot-for-readme.png)
-
-[Video Tutorial on Youtube](https://youtu.be/sX57TLIPNx8)
 
 About This Course:
 
@@ -32,7 +29,7 @@ About This Course:
 PORT=5000
 MONGO_URI=your_mongo_uri
 
-UPSTASH_REDIS_URL=your_redis_url
+UPSTASH_REDIS_URL=
 
 ACCESS_TOKEN_SECRET=your_access_token_secret
 REFRESH_TOKEN_SECRET=your_refresh_token_secret
