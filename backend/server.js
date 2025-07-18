@@ -36,6 +36,9 @@ if (process.env.NODE_ENV === "production") {
 		res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
 	});
 }
+app.get("/", (req, res) => {
+    res.send("🚀 Backend is running!");
+});
 
 app.listen(PORT, () => {
 	console.log("Server is running on http://localhost:" + PORT);
