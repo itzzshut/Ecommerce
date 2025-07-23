@@ -23,8 +23,9 @@ const __dirname = path.resolve();
 
 // ✅ Setup CORS for frontend Vercel domain
 const allowedOrigins = [
-	process.env.CLIENT_URL, // take from .env e.g., https://ecommerce-topaz-zeta.vercel.app
+	process.env.CLIENT_URL || "http://localhost:5173", // fallback for dev
 ];
+
 
 app.use(cors({
 	origin: allowedOrigins,
