@@ -5,7 +5,8 @@ const axiosInstance = axios.create({
 		import.meta.env.MODE === "development"
 			? "http://localhost:5000/api"
 			: import.meta.env.VITE_BACKEND_URL + "/api",
-	withCredentials: true, // send cookies to the server
+	withCredentials: true,
 });
 
 export default axiosInstance;
+	
