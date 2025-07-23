@@ -17,6 +17,7 @@ import PurchaseSuccessPage from "./pages/PurchaseSuccessPage";
 import PurchaseCancelPage from "./pages/PurchaseCancelPage";
 
 function App() {
+	console.log("Backend URL:", import.meta.env.VITE_BACKEND_URL);
 	const { user, checkAuth, checkingAuth } = useUserStore();
 	const { getCartItems } = useCartStore();
 	useEffect(() => {
@@ -32,7 +33,7 @@ function App() {
 	if (checkingAuth) return <LoadingSpinner />;
 
 	return (
-		<div className='min-h-screen bg-gray-900 text-white relative overflow-hidden'>
+		<div className='relative min-h-screen overflow-hidden text-white bg-gray-900'>
 			{/* Background gradient */}
 			<div className='absolute inset-0 overflow-hidden'>
 				<div className='absolute inset-0'>
