@@ -8,5 +8,12 @@ const axiosInstance = axios.create({
 	withCredentials: true,
 });
 
+// Intercept requests to remove leading slash from URL
+axiosInstance.interceptors.request.use((config) => {
+	if (config.url.startsWith("/")) {
+		config.url = config.url.substring(1); // remove leading slash
+	}
+	return config;
+});
+
 export default axiosInstance;
-	
