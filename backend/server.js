@@ -21,25 +21,25 @@ const HOST = "0.0.0.0"; // 👈 For Render to listen on all interfaces
 
 const __dirname = path.resolve();
 
-// ✅ Setup CORS for frontend Vercel domain
-const allowedOrigins = [
-	process.env.CLIENT_URL || "http://localhost:5173", // fallback for dev
-];
+import cors from "cors";
 
 
-app.use(cors({
-	origin: allowedOrigins,
-	credentials: true, // 👈 allow cookies
-}));
+console.log("✅ CORS enabled for:", allowedOrigins);
+
 
 app.use(express.json({ limit: "10mb" })); // parse JSON body
 app.use(cookieParser());
-app.use(
-	cors({
-		origin: allowedOrigins,
-		credentials: true,
-	})
-);
+
+const allowedOrigins = [
+    "https://ecommerce-topaz-zeta.vercel.app", // Your Vercel frontend
+    "http://localhost:5173" // Local frontend
+];
+
+app.use(cors({
+    origin: allowedOrigins,
+    credentials: true, // Allow cookies/auth headers
+}));
+console.log("✅ CORS enabled for:", allowedOrigins);
 // API routes
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
