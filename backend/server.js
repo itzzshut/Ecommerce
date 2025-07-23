@@ -34,7 +34,12 @@ app.use(cors({
 
 app.use(express.json({ limit: "10mb" })); // parse JSON body
 app.use(cookieParser());
-
+app.use(
+	cors({
+		origin: allowedOrigins,
+		credentials: true,
+	})
+);
 // API routes
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
